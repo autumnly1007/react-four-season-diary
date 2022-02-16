@@ -1,5 +1,14 @@
+@import "./../../common/global.scss";
+
 .nav {
-  display: flex;
-  flex-grow: 1;
-  background-color: purple;
+  width: 100%;
+}
+
+.list {
+}
+
+.item {
+  font-size: $font-regular;
+  padding: 1rem;
+  border-bottom: 1px solid $color-light-grey;
 }

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
 /* Color */
 $color-white: #ffffff;
 $color-light-white: #eeeeee;
@@ -36,7 +38,7 @@ $animation-duration: 300ms;
 
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   cursor: default;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
