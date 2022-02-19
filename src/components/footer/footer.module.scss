@@ -1,7 +1,12 @@
 .footer {
   width: 100%;
-  background-color: powderblue;
+  // background-color: powderblue;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-top: 1px solid lightgray;
+}
+
+.title {
+  color: gray;
 }

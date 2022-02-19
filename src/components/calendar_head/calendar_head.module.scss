@@ -1,0 +1,81 @@
+.calendar_head {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  padding: 1em;
+}
+
+.memo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex-basis: 33.33%;
+}
+
+.memo_item {
+  display: flex;
+  width: 70%;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 0.5em;
+}
+
+.memo_input {
+  width: 100%;
+}
+
+.memo_item:nth-child(2n) {
+  margin-bottom: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 33.33%;
+}
+
+.year {
+}
+
+.month {
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-basis: 33.33%;
+}
+
+.today {
+  cursor: pointer;
+  transition: transform 300ms ease-in;
+}
+
+.today:hover {
+  transform: scale(1.2);
+}
+
+.today_text {
+  font-size: 1.3em;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.label {
+  display: flex;
+}
+
+.label_text {
+  font-size: 0.8em;
+}

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 /* Color */
 $color-white: #ffffff;
@@ -38,7 +38,7 @@ $animation-duration: 300ms;
 
 body {
   margin: 0;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   cursor: default;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -46,15 +46,41 @@ body {
 
 ul {
   padding-left: 0;
+  margin: 0;
 }
 
 li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: red;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
 button {
   background-color: transparent;
   cursor: pointer;
   border: none;
+  outline: none;
+}
+
+input {
+  border: 1px solid transparent;
+}
+
+input:focus {
+  outline: none;
+}
+textarea:focus {
   outline: none;
 }

@@ -1,9 +1,10 @@
 .container {
   width: 90%;
   height: 90%;
-  border: 1px solid black;
+  border: 1px solid lightgray;
   display: flex;
   flex-direction: column;
+  //box-shadow: 6px 6px 8px 0px makerShadow;
 }
 
 .header {
