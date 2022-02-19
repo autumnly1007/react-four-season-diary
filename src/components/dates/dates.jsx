@@ -26,9 +26,11 @@ const Dates = (props) => {
   }
 
   return (
-    <li className={`${styles.date} ${isPrevDate} ${isNextDate}`}>
-      <div className={styles.number}>{item}</div>
-    </li>
+    <>
+      <li className={`${styles.date} ${isPrevDate} ${isNextDate}`}>
+        <div className={styles.number}>{item}</div>
+      </li>
+    </>
   );
 };
 

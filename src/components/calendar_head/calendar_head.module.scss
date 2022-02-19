@@ -54,11 +54,10 @@
 
 .today {
   cursor: pointer;
-  transition: transform 300ms ease-in;
 }
 
 .today:hover {
-  transform: scale(1.2);
+  opacity: 0.5;
 }
 
 .today_text {

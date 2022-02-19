@@ -13,3 +13,9 @@
   padding: 1rem;
   border-bottom: 1px solid lightgray;
 }
+
+.item:hover {
+  .item_text {
+    opacity: 0.5;
+  }
+}
