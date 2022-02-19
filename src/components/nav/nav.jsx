@@ -7,9 +7,7 @@ const Nav = (props) => {
     <section className={styles.nav}>
       <ul className={styles.list}>
         <Link to="/calendar">
-          <li className={styles.item}>
-            <span>Calendar</span>
-          </li>
+          <li className={styles.item}>Calendar</li>
         </Link>
         <Link to="/memo">
           <li className={styles.item}>Memo</li>

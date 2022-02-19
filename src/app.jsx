@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import styles from "./app.module.scss";
+import Moment from "moment";
 import Calendar from "./components/calendar/calendar";
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
@@ -27,8 +28,8 @@ function App({ authService }) {
                 path="/login"
                 element={<Login authService={authService} />}
               />
-              <Route path="/calendar" element={<Calendar />} />
-              <Route path="/weekly" element={<Weekly />} />
+              <Route path="/calendar" element={<Calendar Moment={Moment} />} />
+              <Route path="/weekly" element={<Weekly Moment={Moment} />} />
               <Route path="/memo" element={<Memo />} />
               <Route path="/setting" element={<Setting />} />
               <Route path="*" element={<NotFound />} />
