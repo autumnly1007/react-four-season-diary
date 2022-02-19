@@ -4,8 +4,10 @@ import styles from './header.module.scss';
 const Header = (props) => {
   return (
     <header className={styles.header}>
-      <button className={styles.logout}></button>
       <h2 className={styles.title}>Four Season Diary ✏️</h2>
+      <div className={styles.buttons}>
+        <button className={styles.logout}>Logout</button>
+      </div>
     </header>
   );
 };
