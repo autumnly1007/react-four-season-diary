@@ -67,20 +67,28 @@ const Calendar = ({ menu }) => {
     setCalendar(onChangeDate(month));
   }, [month]);
 
+  let isWeekly = null;
+  if (menu === 'weekly') {
+    isWeekly = styles.weekly;
+  }
+
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} ${isWeekly}`}>
       <CalendarHead
         year={year}
         month={month}
         setMonth={setMonth}
         goToday={goToday}
         menu={menu}
+        isWeekly={isWeekly}
       />
       <CalendarBody
         calendar={calendar}
         today={today}
         month={month}
         year={year}
+        menu={menu}
+        isWeekly={isWeekly}
       />
     </section>
   );

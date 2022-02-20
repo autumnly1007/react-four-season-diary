@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './dates.module.scss';
 
 const Dates = (props) => {
-  const { thisFirst, nextFirst, item, isToday, year, month, idx } = props;
+  const { thisFirst, nextFirst, item, isToday, year, month, idx, menu } = props;
 
   const [userInput, setUserInput] = useState({});
   const [eventList, setEventList] = useState([]);
@@ -10,6 +10,7 @@ const Dates = (props) => {
 
   let isPrevDate = null;
   let isNextDate = null;
+  let isWeekly = null;
 
   let key = `${month}` + `${item}`;
 
@@ -25,10 +26,18 @@ const Dates = (props) => {
     isNextDate = styles.next;
   }
 
+  if (menu === 'weekly') {
+    isWeekly = styles.weekly;
+  }
+
+  console.log(isToday);
+
   return (
     <>
-      <li className={`${styles.date} ${isPrevDate} ${isNextDate}`}>
-        <div className={styles.number}>{item}</div>
+      <li
+        className={`${styles.date} ${isPrevDate} ${isNextDate} ${isWeekly} ${isToday}`}
+      >
+        <div className={`${styles.number} ${isWeekly}`}>{item}</div>
       </li>
     </>
   );

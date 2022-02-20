@@ -23,7 +23,8 @@ const CalendarBody = (props) => {
             item={item}
             year={year}
             month={month}
-            isToday={isToday === idx && month === getMonth && isToday}
+            menu={menu}
+            isToday={today === idx && month === getMonth && isToday}
           />
         );
       })}

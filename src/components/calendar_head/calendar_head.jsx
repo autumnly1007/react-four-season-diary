@@ -8,10 +8,16 @@ const DAY = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 const CalendarHead = (props) => {
   const { year, month, goToday, setMonth, menu } = props;
+  let isWeekly = null;
+
+  if (menu === 'weekly') {
+    isWeekly = styles.weekly;
+  }
+
   return (
     <div className={styles.calendar_head}>
       <div className={styles.header}>
-        {menu == 'monthly' && (
+        {isWeekly == null && (
           <ul className={styles.memo}>
             <li className={styles.memo_item}>
               <input type="checkbox" />
@@ -23,11 +29,11 @@ const CalendarHead = (props) => {
             </li>
           </ul>
         )}
-        <div className={styles.title}>
+        <div className={`${styles.title} ${isWeekly}`}>
           <span className={styles.year}>{year}.</span>
           <span className={styles.month}>{('0' + month).slice(-2)}</span>
         </div>
-        <div className={styles.nav}>
+        <div className={`${styles.nav} ${isWeekly}`}>
           <button onClick={() => setMonth(month - 1)}>
             <FontAwesomeIcon icon={faAngleLeft} size="lg" />
           </button>

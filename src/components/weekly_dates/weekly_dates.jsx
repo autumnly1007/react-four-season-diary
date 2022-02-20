@@ -10,6 +10,11 @@ const WeeklyDates = (props) => {
 
   let isPrevDate = null;
   let isNextDate = null;
+  let isCalendar = null;
+
+  if (idx === 0) {
+    isCalendar = styles.calendar;
+  }
 
   let key = `${month}` + `${item}`;
 
@@ -17,8 +22,16 @@ const WeeklyDates = (props) => {
 
   return (
     <>
-      <li className={styles.date}>
-        <div className={styles.number}>{item}</div>
+      <li className={`${styles.date} ${isCalendar}`}>
+        <div className={`${styles.number} ${isCalendar}`}>{item}</div>
+        {idx !== 0 && (
+          <>
+            {/* <div className={styles.schedule}></div> */}
+            <div className={styles.input}>
+              <textarea className={styles.textarea} />
+            </div>
+          </>
+        )}
       </li>
     </>
   );
