@@ -11,6 +11,11 @@
   border-left: 0;
 }
 
+.date.weekly:hover {
+  cursor: pointer;
+  background-color: rgb(255, 230, 234);
+}
+
 .date:nth-child(7n) {
   .number {
     color: blue;

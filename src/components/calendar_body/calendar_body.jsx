@@ -3,7 +3,7 @@ import Dates from '../dates/dates';
 import styles from './calendar_body.module.scss';
 
 const CalendarBody = (props) => {
-  const { calendar, today, month, year, menu } = props;
+  const { calendar, today, month, year, menu, setWeek } = props;
 
   const thisFirst = calendar.indexOf(1); // 첫번째 1일의 인덱스
   const nextFirst = calendar.indexOf(1, 7); // 첫번째 주를 제외한 1일의 인덱스 (다음 달의 1일)
@@ -24,6 +24,7 @@ const CalendarBody = (props) => {
             year={year}
             month={month}
             menu={menu}
+            setWeek={setWeek}
             isToday={today === idx && month === getMonth && isToday}
           />
         );

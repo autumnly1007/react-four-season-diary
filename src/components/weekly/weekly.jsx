@@ -5,9 +5,9 @@ import styles from './weekly.module.scss';
 
 Date.prototype.getWeek = () => {
   const date = new Date();
-  var onejan = new Date(date.getFullYear(), 0, 1);
-  var today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-  var dayOfYear = (today - onejan + 86400000) / 86400000;
+  const onejan = new Date(date.getFullYear(), 0, 1);
+  const today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const dayOfYear = (today - onejan + 86400000) / 86400000;
   return Math.ceil(dayOfYear / 7);
 };
 
@@ -26,14 +26,13 @@ const Weekly = (props) => {
   const onChangeWeek = (week) => {
     let startDate = getStartDayFromWeek(week, year);
     let endDate = getEndDayFromWeek(week, year);
-    for (let i = 0; i < calendar.length; i++) {
-      calendar.pop();
-    }
-    calendar.push(<Calendar menu={menu} />);
+    let calendar = [];
+
+    calendar.push(<Calendar menu={menu} setWeek={setWeek} />);
     for (let date = startDate; date <= endDate; date++) {
       calendar.push(date);
     }
-    console.log(calendar);
+    console.log(week + ' : ' + calendar);
     return calendar;
   };
 
@@ -62,28 +61,19 @@ const Weekly = (props) => {
 
   // 처음 한번만 실행
   useEffect(() => {
-    setWeek(onChangeWeek(8));
+    setCalendar(onChangeWeek(week));
   }, []);
 
   // week 의 상태가 변경될 때 마다 호출
-  // useEffect(() => {
-  //   setWeek(onChangeWeek(week));
-  // }, [week]);
+  useEffect(() => {
+    setCalendar(onChangeWeek(week));
+  }, [week]);
 
   return (
     <section className={styles.container}>
       <ul className={styles.weekly_body}>
         {calendar.map((item, idx) => {
-          return (
-            <WeeklyDates
-              key={idx}
-              idx={idx}
-              item={item}
-              year={year}
-              month={month}
-              calendar={calendar}
-            />
-          );
+          return <WeeklyDates key={idx} idx={idx} item={item} year={year} />;
         })}
       </ul>
     </section>

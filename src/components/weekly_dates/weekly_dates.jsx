@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './weekly_dates.module.scss';
 
 const WeeklyDates = (props) => {
-  const { thisFirst, nextFirst, item, isToday, year, month, idx } = props;
+  const { item, isToday, year, month, idx } = props;
 
   const [userInput, setUserInput] = useState({});
   const [eventList, setEventList] = useState([]);

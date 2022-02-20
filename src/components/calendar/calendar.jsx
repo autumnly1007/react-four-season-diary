@@ -6,7 +6,7 @@ import CalendarBody from '../calendar_body/calendar_body';
 const YEAR = new Date().getFullYear();
 const MONTH = new Date().getMonth() + 1;
 
-const Calendar = ({ menu }) => {
+const Calendar = ({ menu, setWeek }) => {
   const [year, setYear] = useState(YEAR);
   const [month, setMonth] = useState(MONTH);
   const [calendar, setCalendar] = useState([]);
@@ -80,7 +80,6 @@ const Calendar = ({ menu }) => {
         setMonth={setMonth}
         goToday={goToday}
         menu={menu}
-        isWeekly={isWeekly}
       />
       <CalendarBody
         calendar={calendar}
@@ -88,7 +87,7 @@ const Calendar = ({ menu }) => {
         month={month}
         year={year}
         menu={menu}
-        isWeekly={isWeekly}
+        setWeek={setWeek}
       />
     </section>
   );
