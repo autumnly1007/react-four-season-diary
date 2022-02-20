@@ -1,24 +1,32 @@
 .date {
   display: flex;
+  flex-direction: row;
   flex-basis: 25%;
   border-bottom: 1px solid #e4e3e6;
   border-left: 1px solid #e4e3e6;
 }
 
-.date:nth-child(4n) {
-  .number {
-    color: blue;
-  }
+.date:nth-child(1) {
+  border-left: 0;
 }
 
-.date:nth-child(4n + 1) {
-  border-left: 0;
+.date:nth-child(2) {
   .number {
     color: red;
   }
 }
 
-.date:nth-last-child(-n + 7) {
+.date:nth-child(8) {
+  .number {
+    color: blue;
+  }
+}
+
+.date:nth-child(5) {
+  border-left: 0;
+}
+
+.date:nth-last-child(-n + 4) {
   border-bottom: 0;
 }
 

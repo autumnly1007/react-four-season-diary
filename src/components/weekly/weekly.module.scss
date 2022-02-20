@@ -7,3 +7,11 @@
   flex-direction: column;
   // box-shadow: 6px 6px 8px 0px makerShadow;
 }
+
+.weekly_body {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // border-radius: 1%;
+}

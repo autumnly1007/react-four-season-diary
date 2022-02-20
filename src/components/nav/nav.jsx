@@ -6,9 +6,9 @@ const Nav = (props) => {
   return (
     <section className={styles.nav}>
       <ul className={styles.list}>
-        <Link to="/calendar">
+        <Link to="/monthly">
           <li className={styles.item}>
-            <span className={styles.item_text}>Calendar</span>
+            <span className={styles.item_text}>Monthly</span>
           </li>
         </Link>
         <Link to="/weekly">

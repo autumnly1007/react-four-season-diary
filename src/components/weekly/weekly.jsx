@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Calendar from '../calendar/calendar';
 import WeeklyDates from '../weekly_dates/weekly_dates';
 import styles from './weekly.module.scss';
 
@@ -18,15 +19,21 @@ const Weekly = (props) => {
   const [year, setYear] = useState(YEAR);
   const [month, setMonth] = useState(MONTH);
   const [week, setWeek] = useState(WEEK);
-  const [calendar, setCalendar] = useState([]);
   const [today, setToday] = useState(0);
+  const [calendar, setCalendar] = useState([]);
+  const [menu, setMenu] = useState('weekly');
 
   const onChangeWeek = (week) => {
     let startDate = getStartDayFromWeek(week, year);
     let endDate = getEndDayFromWeek(week, year);
+    for (let i = 0; i < calendar.length; i++) {
+      calendar.pop();
+    }
+    calendar.push(<Calendar menu={menu} />);
     for (let date = startDate; date <= endDate; date++) {
       calendar.push(date);
     }
+    console.log(calendar);
     return calendar;
   };
 
@@ -64,20 +71,22 @@ const Weekly = (props) => {
   // }, [week]);
 
   return (
-    <ul className={styles.container}>
-      {calendar.map((item, idx) => {
-        return (
-          <WeeklyDates
-            key={idx}
-            idx={idx}
-            item={item}
-            year={year}
-            month={month}
-            calendar={calendar}
-          />
-        );
-      })}
-    </ul>
+    <section className={styles.container}>
+      <ul className={styles.weekly_body}>
+        {calendar.map((item, idx) => {
+          return (
+            <WeeklyDates
+              key={idx}
+              idx={idx}
+              item={item}
+              year={year}
+              month={month}
+              calendar={calendar}
+            />
+          );
+        })}
+      </ul>
+    </section>
   );
 };
 

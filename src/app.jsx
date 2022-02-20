@@ -10,8 +10,8 @@ import Nav from './components/nav/nav';
 import NotFound from './components/not_found/not_found';
 import Setting from './components/setting/setting';
 import Weekly from './components/weekly/weekly';
-import { useState } from 'react';
 import Daily from './components/daily/daily';
+import Monthly from './components/monthly/monthly';
 
 function App({ authService }) {
   return (
@@ -29,7 +29,7 @@ function App({ authService }) {
                 path="/login"
                 element={<Login authService={authService} />}
               />
-              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/monthly" element={<Monthly />} />
               <Route path="/weekly" element={<Weekly />} />
               <Route path="/daily" element={<Daily />} />
               <Route path="/memo" element={<Memo />} />

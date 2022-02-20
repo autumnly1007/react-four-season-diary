@@ -7,20 +7,22 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 const DAY = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 const CalendarHead = (props) => {
-  const { year, month, goToday, setMonth } = props;
+  const { year, month, goToday, setMonth, menu } = props;
   return (
-    <section className={styles.calendar_head}>
+    <div className={styles.calendar_head}>
       <div className={styles.header}>
-        <ul className={styles.memo}>
-          <li className={styles.memo_item}>
-            <input type="checkbox" />
-            <input className={styles.memo_input} type="text" />
-          </li>
-          <li className={styles.memo_item}>
-            <input type="checkbox" />
-            <input className={styles.memo_input} type="text" />
-          </li>
-        </ul>
+        {menu == 'monthly' && (
+          <ul className={styles.memo}>
+            <li className={styles.memo_item}>
+              <input type="checkbox" />
+              <input className={styles.memo_input} type="text" />
+            </li>
+            <li className={styles.memo_item}>
+              <input type="checkbox" />
+              <input className={styles.memo_input} type="text" />
+            </li>
+          </ul>
+        )}
         <div className={styles.title}>
           <span className={styles.year}>{year}.</span>
           <span className={styles.month}>{('0' + month).slice(-2)}</span>
@@ -46,7 +48,7 @@ const CalendarHead = (props) => {
           );
         })}
       </ul>
-    </section>
+    </div>
   );
 };
 

@@ -18,7 +18,7 @@ const WeeklyDates = (props) => {
   return (
     <>
       <li className={styles.date}>
-        <div className={styles.number}>num</div>
+        <div className={styles.number}>{item}</div>
       </li>
     </>
   );
