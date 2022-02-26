@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import styles from './app.module.scss';
-import Calendar from './components/calendar/calendar';
+import Monthly from './components/monthly/monthly';
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import Home from './components/home/home';
@@ -11,7 +11,6 @@ import NotFound from './components/not_found/not_found';
 import Setting from './components/setting/setting';
 import Weekly from './components/weekly/weekly';
 import Daily from './components/daily/daily';
-import Monthly from './components/monthly/monthly';
 
 function App({ authService }) {
   return (

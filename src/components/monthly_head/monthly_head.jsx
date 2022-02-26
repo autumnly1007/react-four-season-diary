@@ -1,18 +1,14 @@
 import React from 'react';
-import styles from './calendar_head.module.scss';
+import styles from './monthly_head.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const DAY = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
-const CalendarHead = (props) => {
-  const { year, month, goToday, setMonth, menu } = props;
+const MonthlyHead = (props) => {
+  const { year, month, goToday, setMonth } = props;
   let isWeekly = null;
-
-  if (menu === 'weekly') {
-    isWeekly = styles.weekly;
-  }
 
   return (
     <div className={styles.calendar_head}>
@@ -58,4 +54,4 @@ const CalendarHead = (props) => {
   );
 };
 
-export default CalendarHead;
+export default MonthlyHead;

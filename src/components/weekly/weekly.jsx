@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Calendar from '../calendar/calendar';
+import Monthly from '../monthly/monthly';
 import WeeklyDates from '../weekly_dates/weekly_dates';
 import styles from './weekly.module.scss';
 
@@ -28,7 +28,7 @@ const Weekly = (props) => {
     let endDate = getEndDayFromWeek(week, year);
     let calendar = [];
 
-    calendar.push(<Calendar menu={menu} setWeek={setWeek} />);
+    calendar.push(<Monthly menu={menu} setWeek={setWeek} />);
     for (let date = startDate; date <= endDate; date++) {
       calendar.push(date);
     }
