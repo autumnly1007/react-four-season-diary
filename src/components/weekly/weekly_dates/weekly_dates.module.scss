@@ -8,8 +8,8 @@
   // background-color: pink;
 }
 
-.date:hover {
-  // background-color: #ededed;
+.date:nth-child(n + 2):hover {
+  background-color: #ededed;
 }
 
 .date.calendar:hover {

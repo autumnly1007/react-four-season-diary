@@ -3,7 +3,7 @@ import MonthlyWeek from '../monthly_week/monthly_week';
 import styles from './monthly_body.module.scss';
 
 const MonthlyBody = (props) => {
-  const { weeks, today, month, year, onChangeWeek } = props;
+  const { weeks, today, month, year, onChangeWeek, isMonthly } = props;
   const getMonth = new Date().getMonth() + 1;
 
   return (
@@ -17,6 +17,7 @@ const MonthlyBody = (props) => {
             year={year}
             month={month}
             onChangeWeek={onChangeWeek}
+            isMonthly={isMonthly}
             //isToday={today === idx && month === getMonth && isToday}
           />
         );

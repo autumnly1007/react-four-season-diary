@@ -84,7 +84,13 @@ const Monthly = () => {
         goToday={goToday}
         isMonthly={isMonthly}
       />
-      <MonthlyBody weeks={weeks} today={today} month={month} year={year} />
+      <MonthlyBody
+        weeks={weeks}
+        today={today}
+        month={month}
+        year={year}
+        isMonthly={isMonthly}
+      />
     </section>
   );
 };
