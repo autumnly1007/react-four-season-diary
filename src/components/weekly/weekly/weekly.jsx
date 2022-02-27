@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import WeeklyCalendar from '../weekly_calendar/weekly_calendar';
 import WeeklyDates from '../weekly_dates/weekly_dates';
 import styles from './weekly.module.scss';
 
@@ -12,12 +11,18 @@ const Weekly = (props) => {
   const [month, setMonth] = useState(MONTH);
   const [weeks, setWeeks] = useState([]);
   const [today, setToday] = useState(0);
+
   const dateArr = Array.from({ length: WEEKNUM + 1 }, () => 0);
-  const dateArrr = Array.from({ length: 1 }, () => 0);
   const [date, setDate] = useState(dateArr);
 
+  // 캘린더 배열
+  const calendar = Array.from({ length: 1 }, () => 0);
+
+  // weekly 날짜 변경
   const onChangeWeek = (week) => {
-    setDate(dateArrr.concat(week));
+    // 캘린더 배열과 week 배열 concat
+    setDate(calendar.concat(week));
+    //setDate(week.unshift(0));
   };
 
   return (
