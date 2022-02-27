@@ -3,7 +3,7 @@ import MonthlyDates from '../monthly_dates/monthly_dates';
 import styles from './monthly_week.module.scss';
 
 const MonthlyWeek = (props) => {
-  const { week, today, month, year, setWeek, weekNum } = props;
+  const { week, today, month, year, weekNum } = props;
 
   return (
     <section className={styles.container}>

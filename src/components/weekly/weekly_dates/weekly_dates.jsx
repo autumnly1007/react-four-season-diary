@@ -1,32 +1,16 @@
 import React, { useState } from 'react';
+import WeeklyCalendar from '../weekly_calendar/weekly_calendar';
 import styles from './weekly_dates.module.scss';
 
 const WeeklyDates = (props) => {
-  const { item, isToday, year, month, idx } = props;
-
-  const [userInput, setUserInput] = useState({});
-  const [eventList, setEventList] = useState([]);
-  const [openModal, setOpenModal] = useState(false);
-
-  let isPrevDate = null;
-  let isNextDate = null;
-  let isCalendar = null;
-
-  if (idx === 0) {
-    isCalendar = styles.calendar;
-  }
-
-  let key = `${month}` + `${item}`;
-
-  const onInsert = (value) => {};
-
+  const { idx, item } = props;
   return (
     <>
-      <li className={`${styles.date} ${isCalendar}`}>
-        <div className={`${styles.number} ${isCalendar}`}>{item}</div>
-        {idx !== 0 && (
+      <li className={styles.date}>
+        {idx === 0 && <WeeklyCalendar />}
+        {idx > 0 && (
           <>
-            {/* <div className={styles.schedule}></div> */}
+            <div className={styles.number}>{item}</div>
             <div className={styles.input}>
               <textarea className={styles.textarea} />
             </div>

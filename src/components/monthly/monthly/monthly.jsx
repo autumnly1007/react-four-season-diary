@@ -7,7 +7,7 @@ const YEAR = new Date().getFullYear();
 const MONTH = new Date().getMonth() + 1;
 const WEEKNUM = 7;
 
-const Monthly = ({ menu, setWeek }) => {
+const Monthly = () => {
   const [year, setYear] = useState(YEAR);
   const [month, setMonth] = useState(MONTH);
   const [weeks, setWeeks] = useState([]);
@@ -82,13 +82,7 @@ const Monthly = ({ menu, setWeek }) => {
         setMonth={setMonth}
         goToday={goToday}
       />
-      <MonthlyBody
-        weeks={weeks}
-        today={today}
-        month={month}
-        year={year}
-        setWeek={setWeek}
-      />
+      <MonthlyBody weeks={weeks} today={today} month={month} year={year} />
     </section>
   );
 };
