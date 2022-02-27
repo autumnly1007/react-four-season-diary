@@ -16,11 +16,13 @@ const MonthlyDates = (props) => {
 
   const onInsert = (value) => {};
 
-  if (weekNum < 3 && item > 14) {
+  // 1주차, 7일 이후일 경우 : 이전 달의 날짜
+  if (weekNum === 1 && item > 7) {
     isPrevDate = styles.prev;
   }
 
-  if (weekNum > 3 && item < 8) {
+  // 5주차 이상, 8일 이전일 경우 : 다음 달의 날짜
+  if (weekNum >= 5 && item < 8) {
     isNextDate = styles.next;
   }
 
