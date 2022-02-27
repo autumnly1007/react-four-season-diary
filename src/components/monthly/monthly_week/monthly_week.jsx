@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Monthly from '../monthly/monthly';
 import MonthlyDates from '../monthly_dates/monthly_dates';
 import styles from './monthly_week.module.scss';
 

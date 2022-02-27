@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Monthly from '../monthly/monthly';
+import Monthly from '../../monthly/monthly/monthly';
 import WeeklyDates from '../weekly_dates/weekly_dates';
 import styles from './weekly.module.scss';
 

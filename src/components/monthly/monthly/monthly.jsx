@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './monthly.module.scss';
 import MonthlyHead from '../monthly_head/monthly_head';
-import MonthlyBody from '../mothly_body/monthly_body';
+import MonthlyBody from '../monthly_body/monthly_body';
 
 const YEAR = new Date().getFullYear();
 const MONTH = new Date().getMonth() + 1;
