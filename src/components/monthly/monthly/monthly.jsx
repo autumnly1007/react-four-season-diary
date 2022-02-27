@@ -12,6 +12,7 @@ const Monthly = () => {
   const [month, setMonth] = useState(MONTH);
   const [weeks, setWeeks] = useState([]);
   const [today, setToday] = useState(0);
+  const isMonthly = true;
 
   const onChangeDate = (month) => {
     let prevEndDate = new Date(YEAR, month - 1, 0).getDate(); // 지난달의 마지막 일자
@@ -81,6 +82,7 @@ const Monthly = () => {
         month={month}
         setMonth={setMonth}
         goToday={goToday}
+        isMonthly={isMonthly}
       />
       <MonthlyBody weeks={weeks} today={today} month={month} year={year} />
     </section>

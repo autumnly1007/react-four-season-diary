@@ -3,15 +3,21 @@ import MonthlyHead from '../../monthly/monthly_head/monthly_head';
 import MonthlyBody from '../../monthly/monthly_body/monthly_body';
 import styles from './weekly_calendar.module.scss';
 
-const YEAR = new Date().getFullYear();
-const MONTH = new Date().getMonth() + 1;
-const WEEKNUM = 7;
-
 const WeeklyCalendar = (props) => {
-  const [year, setYear] = useState(YEAR);
-  const [month, setMonth] = useState(MONTH);
-  const [weeks, setWeeks] = useState([]);
-  const [today, setToday] = useState(0);
+  const {
+    year,
+    setYear,
+    month,
+    setMonth,
+    weeks,
+    setWeeks,
+    today,
+    setToday,
+    YEAR,
+    MONTH,
+    WEEKNUM,
+    onChangeWeek,
+  } = props;
 
   const onChangeDate = (month) => {
     let prevEndDate = new Date(YEAR, month - 1, 0).getDate(); // 지난달의 마지막 일자
@@ -82,7 +88,14 @@ const WeeklyCalendar = (props) => {
         setMonth={setMonth}
         goToday={goToday}
       />
-      <MonthlyBody weeks={weeks} today={today} month={month} year={year} />
+      <MonthlyBody
+        weeks={weeks}
+        today={today}
+        month={month}
+        year={year}
+        setWeeks={setWeeks}
+        onChangeWeek={onChangeWeek}
+      />
     </section>
   );
 };

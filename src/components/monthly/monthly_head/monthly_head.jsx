@@ -7,13 +7,12 @@ import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 const DAY = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 const MonthlyHead = (props) => {
-  const { year, month, goToday, setMonth } = props;
-  let isWeekly = null;
+  const { year, month, goToday, setMonth, isMonthly } = props;
 
   return (
     <div className={styles.calendar_head}>
       <div className={styles.header}>
-        {isWeekly == null && (
+        {isMonthly && (
           <ul className={styles.memo}>
             <li className={styles.memo_item}>
               <input type="checkbox" />
@@ -25,11 +24,11 @@ const MonthlyHead = (props) => {
             </li>
           </ul>
         )}
-        <div className={`${styles.title} ${isWeekly}`}>
+        <div className={`${styles.title}`}>
           <span className={styles.year}>{year}.</span>
           <span className={styles.month}>{('0' + month).slice(-2)}</span>
         </div>
-        <div className={`${styles.nav} ${isWeekly}`}>
+        <div className={`${styles.nav}`}>
           <button onClick={() => setMonth(month - 1)}>
             <FontAwesomeIcon icon={faAngleLeft} size="lg" />
           </button>
